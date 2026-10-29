@@ -5,7 +5,6 @@ import { siteConfig } from "@/lib/config";
 
 import { Toaster } from "@/components/ui/sonner";
 
-import MainNavbar from "@/components/common/layouts/main-navbar";
 import ThemeProvider from "@/components/common/layouts/theme-provider";
 
 import "./globals.css";
@@ -87,10 +86,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                     enableSystem
                     disableTransitionOnChange
                 >
-                    <div className="flex flex-1 flex-col">
-                        <MainNavbar />
-                        {children}
-                    </div>
+                    <div className="flex flex-1 flex-col">{children}</div>
                     <Toaster />
                 </ThemeProvider>
             </body>

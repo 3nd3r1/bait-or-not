@@ -7,7 +7,7 @@ Working checklist for [mvp-plan.md](./mvp-plan.md). Tick items off as they land.
 ### Setup
 
 - [ ] Template cleanup
-    - [ ] Remove navbar and about page (layout, sitemap)
+    - [x] Remove navbar and about page (layout, sitemap)
     - [ ] Site config for Ragebaitor (feeds metadata, manifest, OG/Twitter images)
     - [ ] Fix manifest icon paths to match `public/`
     - [ ] README
