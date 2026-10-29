@@ -15,7 +15,7 @@ Working checklist for [mvp-plan.md](./mvp-plan.md). Tick items off as they land.
 ### Data
 
 - [x] `src/validators/post.ts`: Zod post schema
-- [ ] Rework schema for screenshot posts: `media`, `alt`, `reason`, optional `sourceUrl`, optional `proof`
+- [x] Rework schema for screenshot posts: `media`, `alt`, `reason`, optional `sourceUrl`, optional `proof`
 - [ ] `src/data/posts.json` + `public/posts/`: 2–3 placeholder screenshot posts
 - [ ] `src/lib/posts.ts`: load and validate posts at import
 
