@@ -34,7 +34,7 @@ Working checklist for [mvp-plan.md](./mvp-plan.md). Tick items off as they land.
 
 - [x] `src/lib/daily.ts`: day number, pick 5 bait + 5 genuine without repeats, shuffle
 - [x] Share text formatting (plain: score, grid, link)
-- [ ] `src/hooks/use-daily-game.ts`: localStorage state (playerId, games by date, stats), resume, streak
+- [x] `src/hooks/use-daily-game.ts`: localStorage state (games by date, stats), resume, streak
 
 ### UI
 
@@ -49,7 +49,7 @@ Working checklist for [mvp-plan.md](./mvp-plan.md). Tick items off as they land.
 
 - [x] `daily.ts`: same date same set, 5/5 balance, no repeats
 - [x] Share text
-- [ ] Game hook: guess, advance, finish, resume, streak rollover
+- [x] Game hook: guess, advance, finish, resume, streak rollover
 
 ### Content
 
@@ -61,6 +61,7 @@ Working checklist for [mvp-plan.md](./mvp-plan.md). Tick items off as they land.
 - [ ] Seed script from `posts.json`
 - [ ] `GET /api/daily` (posts without labels)
 - [ ] `POST` guess returns label, reason, crowd split
+- [ ] Anonymous `playerId` in localStorage
 - [ ] `POST /api/votes` with one vote per player per post
 - [ ] Cache crowd %
 - [ ] Flag posts where crowd disagrees with label

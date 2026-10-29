@@ -48,11 +48,12 @@ Every screenshot is captured and imported the same way, so posts look consistent
 
 `src/hooks/use-daily-game.ts`, stored in localStorage:
 
-- `playerId`: random uuid, created on first visit (unused until Phase 2, but set now)
-- `games[date]`: guesses so far, so a reload resumes mid-round and a finished day shows the end screen
+- `games[date]`: the round's post ids, guesses and position. A reload resumes mid-round (even mid-reveal), a finished day shows the end screen, and changing `posts.json` mid-day doesn't move guesses onto different posts.
 - `stats`: current streak, max streak, last completed date
 
 Streak = consecutive days with a finished round. Missing a day resets it.
+
+The anonymous `playerId` for votes is added in Phase 2, when there's something to use it for.
 
 ### UI (one page, mobile-first)
 
