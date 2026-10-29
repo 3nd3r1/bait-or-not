@@ -4,14 +4,15 @@ import type { Post } from "@/validators/post";
 
 const PostCard = ({ post }: { post: Post }) => {
     return (
-        <div className="relative h-[min(60vh,32rem)] w-full overflow-hidden rounded-xl bg-muted ring-1 ring-foreground/10">
+        <div className="flex justify-center">
             <Image
                 src={post.media.url}
                 alt={post.alt}
-                fill
+                width={post.media.width}
+                height={post.media.height}
                 sizes="(max-width: 448px) 100vw, 448px"
                 loading="eager"
-                className="object-contain"
+                className="h-auto max-h-[60dvh] w-auto max-w-full rounded-xl ring-1 ring-foreground/10"
             />
         </div>
     );

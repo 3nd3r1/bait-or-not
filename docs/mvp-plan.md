@@ -16,7 +16,7 @@ Posts are screenshots of real posts, not re-typed text. A screenshot works for a
 {
   id: string,            // "p001"
   label: "bait" | "genuine",
-  media: { type: "image", url: string },  // "/posts/p001.webp"; video later
+  media: { type: "image", url: string, width: number, height: number },  // set by add-post; video later
   alt: string,           // what the post says, for screen readers
   reason: string,        // one line shown on reveal
   sourceUrl?: string,    // "View original" after reveal, when we have it
@@ -31,8 +31,8 @@ Everything ships in the client bundle until Phase 2 moves posts to the server.
 Every screenshot is captured and imported the same way, so posts look consistent.
 
 1. **Capture** (guide in `docs/capture.md`): DevTools device mode at 390px wide, edit out real names and like counts in DevTools, then Inspect the post → Capture node screenshot.
-2. **Import** with `npm run add-post`: resizes to 1080px wide WebP with `sharp`, strips metadata, assigns the next id and appends the entry to `posts.json`.
-3. **Display:** the card shows the screenshot in a fixed frame (fixed width, max height, neutral background) so the layout doesn't jump between posts.
+2. **Import** with `npm run add-post`: resizes to 1080px wide WebP with `sharp`, strips metadata, records the image size, assigns the next id and appends the entry to `posts.json`.
+3. **Display:** the card is sized to the screenshot, up to a max height. The guess buttons are pinned to the bottom of the screen, so they don't move between posts.
 
 ### Daily set
 
@@ -59,7 +59,7 @@ The anonymous `playerId` for votes is added in Phase 2, when there's something t
 
 | Component        | Does                                                                     |
 | ---------------- | ------------------------------------------------------------------------ |
-| `PostCard`       | Screenshot in a fixed frame                                              |
+| `PostCard`       | Screenshot sized to fit, up to a max height                              |
 | `GuessButtons`   | Bait / Genuine, large tap targets at the bottom of the screen            |
 | `Reveal`         | Right/wrong, verdict, reason, View original, Show proof, Next            |
 | `ProgressDots`   | 10 dots showing done / current / correct / wrong                         |
