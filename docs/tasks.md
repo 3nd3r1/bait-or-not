@@ -14,7 +14,7 @@ Working checklist for [mvp-plan.md](./mvp-plan.md). Tick items off as they land.
 
 ### Data
 
-- [ ] `src/validators/post.ts`: Zod post schema
+- [x] `src/validators/post.ts`: Zod post schema
 - [ ] `src/data/posts.json`: 2–3 placeholder posts (real posts come from Viljami)
 - [ ] `src/lib/posts.ts`: load and validate posts at import
 
