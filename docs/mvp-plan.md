@@ -8,21 +8,31 @@ Goal: play a full round on a phone, end with share text you can paste.
 
 ### Data
 
+Posts are screenshots of real posts, not re-typed text. A screenshot works for any platform and looks like the real thing.
+
 `src/data/posts.json`, validated at import with a Zod schema in `src/validators/post.ts`:
 
 ```ts
 {
   id: string,            // "p001"
-  body: string,
-  imageUrl?: string,     // optional, files under public/posts/
-  handle: string,        // generated, e.g. "@quietlemon42"
   label: "bait" | "genuine",
+  media: { type: "image", url: string },  // "/posts/p001.webp"; video later
+  alt: string,           // what the post says, for screen readers
   reason: string,        // one line shown on reveal
-  sourceNote?: string,   // private, never rendered
+  sourceUrl?: string,    // "View original" after reveal, when we have it
+  proof?: { type: "image", url: string }[],  // "Show proof" after reveal
 }
 ```
 
-`sourceNote` lives in the JSON for now. It ships in the client bundle, so it must not hold anything sensitive until Phase 2 moves posts to the server.
+Everything ships in the client bundle until Phase 2 moves posts to the server.
+
+### Content workflow
+
+Every screenshot is captured and imported the same way, so posts look consistent.
+
+1. **Capture** (guide in `docs/capture.md`): DevTools device mode at 390px wide, edit out real names and like counts in DevTools, then Inspect the post → Capture node screenshot.
+2. **Import** with `npm run add-post`: resizes to 1080px wide WebP with `sharp`, strips metadata, assigns the next id and appends the entry to `posts.json`.
+3. **Display:** the card shows the screenshot in a fixed frame (fixed width, max height, neutral background) so the layout doesn't jump between posts.
 
 ### Daily set
 
@@ -50,9 +60,9 @@ Streak = consecutive days with a finished round. Missing a day resets it.
 
 | Component        | Does                                                                     |
 | ---------------- | ------------------------------------------------------------------------ |
-| `PostCard`       | Neutral card: generated avatar, handle, body, optional image             |
+| `PostCard`       | Screenshot in a fixed frame                                              |
 | `GuessButtons`   | Bait / Genuine, large tap targets at the bottom of the screen            |
-| `Reveal`         | Right/wrong, verdict, reason, crowd bar, Next button                     |
+| `Reveal`         | Right/wrong, verdict, reason, crowd bar, View original, Show proof, Next |
 | `ProgressDots`   | 10 dots showing done / current / correct / wrong                         |
 | `EndScreen`      | Score, one-line flavour text ("unbaitable"), streak, Copy share button   |
 
@@ -96,8 +106,10 @@ ragebaitor.com
 | Buttons               | Bait / Genuine only. "Can't tell" maybe later                                             |
 | Engagement numbers    | Hidden in Phase 1 (default, revisit after playtesting)                                    |
 | Finnish set           | Out of scope for Phase 1                                                                  |
+| Post format           | Screenshots of real posts, captured and imported with a fixed workflow                    |
+| Proof                 | Optional; `reason` is always required                                                     |
+| Video                 | Later                                                                                     |
 
 ## Still open
 
-- Re-typed real posts vs lookalikes (content decision, doesn't block code)
 - Domain check for ragebaitor.com / .app

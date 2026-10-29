@@ -15,8 +15,20 @@ Working checklist for [mvp-plan.md](./mvp-plan.md). Tick items off as they land.
 ### Data
 
 - [x] `src/validators/post.ts`: Zod post schema
-- [ ] `src/data/posts.json`: 2–3 placeholder posts (real posts come from Viljami)
+- [ ] Rework schema for screenshot posts: `media`, `alt`, `reason`, optional `sourceUrl`, optional `proof`
+- [ ] `src/data/posts.json` + `public/posts/`: 2–3 placeholder screenshot posts
 - [ ] `src/lib/posts.ts`: load and validate posts at import
+
+### Content workflow
+
+- [ ] `docs/capture.md`: capture guide
+    - DevTools device mode at a fixed width (390px)
+    - Edit out real names and like counts in DevTools before capturing
+    - Inspect the post → Capture node screenshot
+- [ ] `npm run add-post` import script
+    - Resize to 1080px wide WebP with `sharp`
+    - Strip metadata
+    - Assign the next id (`p042.webp`) and append the entry to `posts.json`
 
 ### Game logic
 
@@ -27,9 +39,9 @@ Working checklist for [mvp-plan.md](./mvp-plan.md). Tick items off as they land.
 
 ### UI
 
-- [ ] `PostCard`
+- [ ] `PostCard`: screenshot in a fixed frame (fixed width, max height, neutral background)
 - [ ] `GuessButtons`
-- [ ] `Reveal` (verdict, reason, crowd bar, Next)
+- [ ] `Reveal` (verdict, reason, crowd bar, View original, Show proof, Next)
 - [ ] `ProgressDots`
 - [ ] `EndScreen` (score, flavour text, streak, copy share)
 - [ ] Home page wires it together
@@ -54,7 +66,10 @@ Working checklist for [mvp-plan.md](./mvp-plan.md). Tick items off as they land.
 - [ ] Cache crowd %
 - [ ] Flag posts where crowd disagrees with label
 
+## Later
+
+- [ ] Video posts (screen recordings, normalized with ffmpeg)
+
 ## Open
 
-- [ ] Re-typed real posts vs lookalikes
 - [ ] Domain check for ragebaitor.com / .app
