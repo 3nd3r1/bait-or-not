@@ -33,15 +33,14 @@ Working checklist for [mvp-plan.md](./mvp-plan.md). Tick items off as they land.
 ### Game logic
 
 - [ ] `src/lib/daily.ts`: day number, seeded PRNG, pick 5 bait + 5 genuine, shuffle
-- [ ] Fake crowd % seeded from post id
-- [ ] Share text formatting
+- [ ] Share text formatting (plain: score, grid, link)
 - [ ] `src/hooks/use-daily-game.ts`: localStorage state (playerId, games by date, stats), resume, streak
 
 ### UI
 
 - [ ] `PostCard`: screenshot in a fixed frame (fixed width, max height, neutral background)
 - [ ] `GuessButtons`
-- [ ] `Reveal` (verdict, reason, crowd bar, View original, Show proof, Next)
+- [ ] `Reveal` (verdict, reason, View original, Show proof, Next)
 - [ ] `ProgressDots`
 - [ ] `EndScreen` (score, flavour text, streak, copy share)
 - [ ] Home page wires it together

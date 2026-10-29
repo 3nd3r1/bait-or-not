@@ -42,10 +42,6 @@ Every screenshot is captured and imported the same way, so posts look consistent
 - Seeded PRNG from the date string picks 5 bait + 5 genuine and shuffles them. Same set for everyone on the same day.
 - With only ~10 seed posts every day has the same posts in a different order. That's fine for testing.
 
-### Fake crowd %
-
-Seeded from post id, so the number is stable across reloads (e.g. 20–85% said bait). Replaced by real counts in Phase 2.
-
 ### Game state
 
 `src/hooks/use-daily-game.ts`, stored in localStorage:
@@ -62,7 +58,7 @@ Streak = consecutive days with a finished round. Missing a day resets it.
 | ---------------- | ------------------------------------------------------------------------ |
 | `PostCard`       | Screenshot in a fixed frame                                              |
 | `GuessButtons`   | Bait / Genuine, large tap targets at the bottom of the screen            |
-| `Reveal`         | Right/wrong, verdict, reason, crowd bar, View original, Show proof, Next |
+| `Reveal`         | Right/wrong, verdict, reason, View original, Show proof, Next            |
 | `ProgressDots`   | 10 dots showing done / current / correct / wrong                         |
 | `EndScreen`      | Score, one-line flavour text ("unbaitable"), streak, Copy share button   |
 
@@ -72,10 +68,11 @@ Template cleanup: replace the home page, drop the navbar and about page, update 
 
 ### Share text
 
+Kept plain: score, grid, link. No streak line or extra emoji.
+
 ```
-ragebaitor #3 7/10
+Ragebaitor #3 7/10
 🎣🎣⬜🎣⬜⬜🎣⬜⬜⬜
-🔥 streak 4
 ragebaitor.com
 ```
 
@@ -109,6 +106,7 @@ ragebaitor.com
 | Post format           | Screenshots of real posts, captured and imported with a fixed workflow                    |
 | Proof                 | Optional; `reason` is always required                                                     |
 | Video                 | Later                                                                                     |
+| Crowd %               | Not in Phase 1. Comes with real votes in Phase 2                                          |
 
 ## Still open
 
