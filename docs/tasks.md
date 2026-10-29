@@ -38,7 +38,7 @@ Working checklist for [mvp-plan.md](./mvp-plan.md). Tick items off as they land.
 
 ### UI
 
-- [ ] `PostCard`: screenshot in a fixed frame (fixed width, max height, neutral background)
+- [x] `PostCard`: screenshot in a fixed frame (fixed width, max height, neutral background)
 - [ ] `GuessButtons`
 - [ ] `Reveal` (verdict, reason, View original, Show proof, Next)
 - [ ] `ProgressDots`
