@@ -2,6 +2,7 @@
 
 import { useDailyGame } from "@/hooks/use-daily-game";
 
+import GuessButtons from "@/components/game/guess-buttons";
 import PostCard from "@/components/game/post-card";
 
 const Game = () => {
@@ -12,8 +13,11 @@ const Game = () => {
     }
 
     return (
-        <div className="mx-auto flex w-full max-w-md flex-1 flex-col gap-4 p-4">
+        <div className="mx-auto flex w-full max-w-md flex-1 flex-col gap-4 p-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
             <PostCard key={game.current.id} post={game.current} />
+            <div className="mt-auto">
+                {!game.revealed && <GuessButtons onGuess={game.guess} />}
+            </div>
         </div>
     );
 };
