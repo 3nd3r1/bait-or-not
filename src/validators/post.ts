@@ -5,6 +5,8 @@ export const labelSchema = z.enum(["bait", "genuine"]);
 export const mediaSchema = z.object({
     type: z.literal("image"),
     url: z.string().startsWith("/posts/"),
+    width: z.number().int().positive(),
+    height: z.number().int().positive(),
 });
 
 export const postSchema = z.object({

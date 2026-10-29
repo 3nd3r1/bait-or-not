@@ -35,12 +35,12 @@ const nextId = (posts: Post[]): string => {
 
 // sharp strips metadata (EXIF, location) by default.
 const importImage = async (input: string, name: string): Promise<Media> => {
-    await sharp(input)
+    const { width, height } = await sharp(input)
         .rotate()
         .resize({ width: WIDTH })
         .webp({ quality: 85 })
         .toFile(path.join(POSTS_DIR, `${name}.webp`));
-    return { type: "image", url: `/posts/${name}.webp` };
+    return { type: "image", url: `/posts/${name}.webp`, width, height };
 };
 
 const main = async () => {
@@ -67,15 +67,13 @@ const main = async () => {
     const posts = await readPosts();
     const id = nextId(posts);
 
-    const draft = {
+    const draft = postSchema.omit({ media: true, proof: true }).parse({
         id,
         label: values.label,
-        media: { type: "image", url: `/posts/${id}.webp` },
         alt: values.alt,
         reason: values.reason,
         sourceUrl: values.source,
-    };
-    postSchema.parse(draft);
+    });
 
     const media = await importImage(screenshot, id);
     const proofFiles = values.proof ?? [];
