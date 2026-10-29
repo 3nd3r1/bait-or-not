@@ -1,4 +1,4 @@
-// FNV-1a: turns a string into a 32-bit seed.
+// FNV-1a
 export const hashString = (value: string): number => {
     let hash = 0x811c9dc5;
     for (let i = 0; i < value.length; i++) {
@@ -8,7 +8,7 @@ export const hashString = (value: string): number => {
     return hash >>> 0;
 };
 
-// mulberry32: small seeded PRNG returning floats in [0, 1).
+// mulberry32
 export const createRng = (seed: number): (() => number) => {
     let state = seed >>> 0;
     return () => {

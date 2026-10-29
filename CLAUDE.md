@@ -68,6 +68,7 @@ tests/                      # Tests mirror src/ structure
 - Site metadata flows from `src/lib/config.ts` to layout, manifest, sitemap, robots, and OG images
 - API routes export named functions (GET, POST, etc.) in `route.ts` files
 - Tests import route handlers directly for API testing
+- Keep comments to a minimum. Don't comment what the code already says; only add one for a non-obvious why (a workaround, a magic number, a gotcha)
 
 ## Behavior
 

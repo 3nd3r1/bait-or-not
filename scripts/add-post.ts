@@ -33,7 +33,7 @@ const nextId = (posts: Post[]): string => {
     return `p${String(max + 1).padStart(3, "0")}`;
 };
 
-// Fixed width WebP. sharp drops metadata (EXIF, location) unless asked to keep it.
+// sharp strips metadata (EXIF, location) by default.
 const importImage = async (input: string, name: string): Promise<Media> => {
     await sharp(input)
         .rotate()
@@ -67,7 +67,6 @@ const main = async () => {
     const posts = await readPosts();
     const id = nextId(posts);
 
-    // Validate everything except media before writing any files.
     const draft = {
         id,
         label: values.label,

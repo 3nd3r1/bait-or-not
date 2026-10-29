@@ -2,7 +2,6 @@ import { z } from "zod";
 
 export const labelSchema = z.enum(["bait", "genuine"]);
 
-// Only images for now; video is planned for later.
 export const mediaSchema = z.object({
     type: z.literal("image"),
     url: z.string().startsWith("/posts/"),
