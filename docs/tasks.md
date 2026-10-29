@@ -32,7 +32,7 @@ Working checklist for [mvp-plan.md](./mvp-plan.md). Tick items off as they land.
 
 ### Game logic
 
-- [ ] `src/lib/daily.ts`: day number, seeded PRNG, pick 5 bait + 5 genuine, shuffle
+- [x] `src/lib/daily.ts`: day number, pick 5 bait + 5 genuine without repeats, shuffle
 - [ ] Share text formatting (plain: score, grid, link)
 - [ ] `src/hooks/use-daily-game.ts`: localStorage state (playerId, games by date, stats), resume, streak
 
@@ -47,7 +47,7 @@ Working checklist for [mvp-plan.md](./mvp-plan.md). Tick items off as they land.
 
 ### Tests
 
-- [ ] `daily.ts`: same date same set, 5/5 balance, different dates differ
+- [x] `daily.ts`: same date same set, 5/5 balance, no repeats
 - [ ] Share text
 - [ ] Game hook: guess, advance, finish, resume, streak rollover
 

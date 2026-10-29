@@ -38,9 +38,11 @@ Every screenshot is captured and imported the same way, so posts look consistent
 
 `src/lib/daily.ts`:
 
-- Day number = days since a fixed launch date (UTC). Used in share text: `ragebaitor #3`.
-- Seeded PRNG from the date string picks 5 bait + 5 genuine and shuffles them. Same set for everyone on the same day.
-- With only ~10 seed posts every day has the same posts in a different order. That's fine for testing.
+- The day changes at the player's local midnight, like Wordle.
+- Day number = days since a fixed launch date. Used in share text: `Ragebaitor #3`.
+- Each day takes the next 5 bait and next 5 genuine posts in id order, so nothing repeats until the pool runs out, then it cycles. New posts get higher ids, so adding them doesn't change upcoming days.
+- The 10 are shuffled with a seed from the date, so everyone gets the same order.
+- With fewer posts than a round, every post is used each day.
 
 ### Game state
 
