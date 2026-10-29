@@ -1,0 +1,48 @@
+[
+    {
+        "id": "p001",
+        "label": "bait",
+        "media": {
+            "type": "image",
+            "url": "/posts/p001.webp"
+        },
+        "alt": "Pineapple on pizza is objectively correct. If you disagree you've never had good pizza. I will not be taking questions.",
+        "reason": "Posts a new food hot take every Monday.",
+        "proof": [
+            {
+                "type": "image",
+                "url": "/posts/p001-proof-1.webp"
+            }
+        ]
+    },
+    {
+        "id": "p002",
+        "label": "genuine",
+        "media": {
+            "type": "image",
+            "url": "/posts/p002.webp"
+        },
+        "alt": "Finally finished painting the spare room. Took three weekends and I'm still finding blue in my hair. Worth it.",
+        "reason": "Personal update to a small audience."
+    },
+    {
+        "id": "p003",
+        "label": "bait",
+        "media": {
+            "type": "image",
+            "url": "/posts/p003.webp"
+        },
+        "alt": "If you still use a paper calendar you are actively choosing to be less productive. Sorry, someone had to say it.",
+        "reason": "Same 'unpopular opinion' template posted weekly."
+    },
+    {
+        "id": "p004",
+        "label": "genuine",
+        "media": {
+            "type": "image",
+            "url": "/posts/p004.webp"
+        },
+        "alt": "I genuinely think milk before cereal is better. It doesn't get soggy as fast. I've tested this.",
+        "reason": "Followed up with an earnest spreadsheet of soak times."
+    }
+]
