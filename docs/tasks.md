@@ -40,7 +40,7 @@ Working checklist for [mvp-plan.md](./mvp-plan.md). Tick items off as they land.
 
 - [x] `PostCard`: screenshot sized to fit, up to a max height
 - [x] `GuessButtons`, pinned to the bottom of the screen
-- [ ] `Reveal` (verdict, reason, View original, Show proof, Next)
+- [x] `Reveal` (verdict, reason, View original, Show proof, Next)
 - [ ] `ProgressDots`
 - [ ] `EndScreen` (score, flavour text, streak, copy share)
 - [ ] Home page wires it together
