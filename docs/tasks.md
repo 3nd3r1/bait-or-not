@@ -25,7 +25,7 @@ Working checklist for [mvp-plan.md](./mvp-plan.md). Tick items off as they land.
     - DevTools device mode at a fixed width (390px)
     - Edit out real names and like counts in DevTools before capturing
     - Inspect the post → Capture node screenshot
-- [ ] `npm run add-post` import script
+- [x] `npm run add-post` import script
     - Resize to 1080px wide WebP with `sharp`
     - Strip metadata
     - Assign the next id (`p042.webp`) and append the entry to `posts.json`
