@@ -1,27 +1,28 @@
 import type { SiteConfig } from "@/validators/config";
 
 export const siteConfig: SiteConfig = {
-    // Basic info - UPDATE THESE
-    name: "My App",
-    shortName: "App",
-    description: "A brief description of your application",
-    url: "https://example.com",
+    // Basic info
+    name: "Ragebaitor",
+    shortName: "Ragebaitor",
+    description:
+        "Ragebait or genuine? Ten real posts a day. Everyone thinks they can spot bait.",
+    url: "https://ragebaitor.com",
 
-    // Branding - UPDATE THESE
+    // Branding
     themeColor: "#000000",
     backgroundColor: "#000000",
     locale: "en_US",
     language: "en",
 
-    // Author info - UPDATE THESE
+    // Author info
     author: {
-        name: "Your Name",
-        url: "https://yoursite.com",
+        name: "Viljami",
+        url: "https://ragebaitor.com",
     },
 
-    // Keywords for SEO - UPDATE THESE
-    keywords: ["keyword1", "keyword2", "keyword3"],
+    // Keywords for SEO
+    keywords: ["ragebait", "daily game", "guessing game", "social media"],
 
-    // App category - UPDATE THIS
-    category: "technology",
+    // App category
+    category: "games",
 };
